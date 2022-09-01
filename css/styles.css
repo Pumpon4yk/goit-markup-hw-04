@@ -1,6 +1,8 @@
 :root {
  --background-color: #F5F5F5;
  --background-color-second: #F5F4FA;
+ --background-hero: rgba(47, 48, 58, 0.4);
+ --bg-cl-icon-footer: rgba(255, 255, 255, 0.1);
  --frame-header: #ECECEC;
  --frame-cards: #EEEEEE;
  --backgraund-footer: #2F303A;
@@ -11,6 +13,7 @@
  --white-color: #ffffff;
  --link-footer-cl: #FFFFFF99;
  --logo-cl: #000000;
+ --cl-icon: #AFB1B8;
  /* Шрифти */
  --main-font: 'Roboto', sans-serif;
  --second-font: 'Raleway', sans-serif;
@@ -79,8 +82,6 @@ button{
 
 .header{
     border-bottom: 1px solid var(--frame-header);
-    padding-top: 24px;
-    padding-bottom: 25px;
 }
 
 .container{
@@ -138,6 +139,9 @@ button{
 }
 
 .nav-link{
+    display: block;
+    padding: 32px 0;
+
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -154,16 +158,24 @@ button{
 }
 
 .contacts{
+    display: flex;
     margin-left: auto;
 }
 
+.contact-icon{
+    fill: currentColor;
+}
+
 .cont-link{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 32px 0;
     font-weight: 500;
     line-height: 1.14px;
     letter-spacing: 0.02em;
     color: var(--grey-color);
-
-
 }
 
 .cont-link:hover,
@@ -179,8 +191,18 @@ button{
 
 /* Герой */
 .hero{
+    max-width: 1600px;
+    height: 600px;
     padding: 200px 0;
-    background-color: var(--backgraund-footer);
+    margin: 0 auto;
+    background-image: linear-gradient(to right,
+    var(--background-hero),
+    var(--background-hero)),
+    url("../images/main/hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
     text-align: center;
 }
 
@@ -233,6 +255,16 @@ button{
     
 }
 
+.skill-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    margin-bottom: 30px;
+    background-color: var(--background-color-second);
+}
+
 .skill-items{
     width: 270px;
 }
@@ -252,7 +284,8 @@ button{
 }
 
 .activity-title,
-.team-title{
+.team-title,
+.comp-titel{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.13;
@@ -318,12 +351,78 @@ button{
 }
 
 .team-position{
+    padding-bottom: 16px;
+
     font-size: 16px;
     line-height: 1.19;
     color: var(--grey-color);
 }
 
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+.link-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--cl-icon);
+    background-color: var(--white-color);
+
+}
+
+.link-social:hover,
+.link-social:focus{
+    color: var(--white-color);
+    background-color: var(--blue-color);
+}
+
+.icon-social{
+    fill: currentColor;
+}
+
+
+/* Наші клієнти */
+
+.comp-list{
+    display: flex;
+    gap:30px;
+
+}
+
+.comp-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+
+    color: var(--cl-icon);
+    border: 1px solid var(--cl-icon);
+    border-radius: 4px; 
+}
+
+.comp-link:hover,
+.comp-link:focus{
+    color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+    border-radius: 4px;
+}
+
+.comp-icon{
+    fill: currentColor;
+}
+
+
 /* Футер */
+
+
 .footer{
     background-color: var(--backgraund-footer);
     padding-top: 60px;
@@ -331,7 +430,10 @@ button{
 }
 
 .footer > .container{
-    flex-direction: column;
+    display: flex;
+    gap: 70px;
+    flex-direction: row;
+    
 }
 
 .address{
@@ -368,6 +470,40 @@ button{
     color: var(--blue-color);
 }
 
+.social-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 12px;
+}
+
+.titel-link{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--white-color);
+
+}
+
+.social-group > .social{
+    align-content: center;
+}
+
+.social-group .link-social{
+    background-color: var(--bg-cl-icon-footer);
+}
+
+.social-group .link-social:hover,
+.social-group .link-social:focus{
+    background-color: var(--blue-color);
+}
+
+.social-group .icon-social{
+    fill: var(--white-color);
+}
 
 
 /* */
@@ -433,6 +569,15 @@ button{
     width: 370px;
     margin-top: 30px;
     margin-left: 30px;
+}
+
+.works-card{
+    display: block;
+}
+
+.works-card:hover,
+.works-card:focus{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .work-titel-type{
